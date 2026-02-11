@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Détail des mécaniques de combat dans la simulation Bêtes. UE Génie Logiciel." >
+        <meta name="author" content="RABENANDRASANA Hajatiana - ANDRIAMANANTENASOA Aina - RATSIMBASON Fanantenana">
+        <title>Système de combat- Projet Bêtes </title>
+    </head>
+    <body>
+        <header>
+            <h1>Projet Bêtes : Simulation d'écosystème</h1>
+            <img src="img/logo.png" alt = "logo université">
+            <p>Module <em>Génie Logiciel</em> et <em>Développement Web</em> - L2 Informatique</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="combat.html"><strong>Système de combat</strong></a></li>
+                </ul>
+            </nav>
+        </header>
+        <hr>
+        <main>
+            <aside>
+                <h3>Sommaire du combat :</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#concept">Concept d'affrontement des bêtes dans la simulation"</a></li>
+                        <li><a href="#phase1">Phase 1 : Score (Forme)</a></li>
+                        <li><a href="#phase2">Phase 2 : Cotes (Proba)</a></li>
+                        <li><a href="#phase3">Phase 3 : Tirage (X-Factor)</a></li>
+                        <li><a href="#phase4">Phase 4 : Conséquences</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <section id="concept">
+                <h2>Mécanique d'affrontement (Combat)</h2>
+                <p>Dans notre simulation, la survie des agents repose sur la gestion de l'énergie. Le combat est une interaction entre agents qui est un aspect du projet.</p>
+                <p>Un combat se déroule quand deux bêtes du même sexe se trouvent dans la même case. L’issue du combat dépend des caractéristiques des bêtes et offre un calcul complexe pour déterminer (avec une part d’aléatoire) le gagnant du combat.</p>
+            </section>
+            <section id="phase1">
+                <h3>Le Calcul du "Score de Performance"</h3>
+                <p>Avant de lancer les dés, on calcule la valeur de combat réelle à l'instant <strong><em>T</em></strong>. Ce score prend en compte la puissance, mais pondérée par l'énergie.</p>
+                <article>
+                    <h4>Formule de base</h4>
+                    <p>On évalue la capacité de combat à l’instant T des deux bêtes s'affrontant avec leurs caractéristiques. Le SCORE PERFORMANCE se calcule ainsi:</p>
+                    <blockquote>
+                        <strong>S<sub>BETE</sub> = (Puissance * 2) + Resistance + (Energie / 10)</strong>
+                    </blockquote>
+                </article>
+                <article>
+                    <h4>Facteurs conditionnels</h4>
+                    <ul>
+                        <li><strong>Malus de fatigue :</strong> Si <code>Energie < 20%</code> (bête affamée ou épuisée), le score est multiplié par <strong>0.5</strong>.</li>
+                        <li><strong>Bonus terrain :</strong> Si la bête est dans son <em>Biome favori</em>, le score est multiplié par <strong>1.2</strong>.</li>
+                    </ul>
+                </article>
+            </section>
+            <section id="phase2">
+                <h3>Phase 2 : Le Calcul des "Cotes" (Probabilités)</h3>
+                <p>C'est l'étape de transformation des scores en pourcentage de chance de gagner (logique "Betclic / Winamax").</p>
+                <p>La probabilité de victoire de la Bête A (<var>P<sub>A</sub></var>) face à la Bête B est :</p>
+
+                <p style="border: 1px solid black; padding: 10px; display: inline-block;">
+                    P<sub>A</sub> = S<sub>A</sub> / (S<sub>A</sub> + S<sub>B</sub>)
+                </p>
+
+                <p><strong>Application à l'exemple Loup vs Mouton :</strong></p>
+                <ul>
+                    <li>Total des scores = 140 + 35 = <strong>175</strong></li>
+                    <li>Chance du Loup : 140 / 175 = <strong>0.80</strong> (80%)</li>
+                    <li>Chance du Mouton : 35 / 175 = <strong>0.20</strong> (20%)</li>
+                </ul>
+                <p><em>Analyse : Le Mouton est l'outsider (grosse cote). Il a peu de chances, mais ce n'est pas zéro.</em></p>
+            </section>
+            <section id="phase3">
+                <h3>Phase 3 : Le Tirage Aléatoire et le "X-Factor"</h3>
+                <p>
+                    Pour simuler le combat, le moteur tire un nombre aléatoire (le destin).
+                </p>
+                <code>double x = Math.random(); // Génère un nombre entre 0.0 et 1.0</code>
+
+                <h4>Résolution standard</h4>
+                <ul>
+                    <li>Si <code>x < P_A</code> (0.80) → <strong>Le Loup gagne</strong> (Logique respectée).</li>
+                    <li>Si <code>x >= P_A</code> → <strong>Le Mouton gagne</strong> (SURPRISE ! Coup de sabot chanceux).</li>
+                </ul>
+
+                <h4>Le mécanisme de Coup Critique</h4>
+                <p>Avant de conclure, on vérifie si le tirage était extrême (5% de chance aux extrémités) :</p>
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Type d'événement</th>
+                        <th>Effet</th>
+                    </tr>
+                    <tr>
+                        <td><code>x < 0.05</code></td>
+                        <td><strong>Victoire Écrasante (Fatality)</strong></td>
+                        <td>Dégâts doublés pour le perdant.</td>
+                    </tr>
+                    <tr>
+                        <td><code>x > 0.95</code></td>
+                        <td><strong>Renversement Total</strong></td>
+                        <td>Si l'outsider gagne ici, il ne prend aucun dégât.</td>
+                    </tr>
+                </table>
+            </section>
+            <section id="phase4">
+                <h3>Phase 4 : Les Conséquences (Dégâts et XP)</h3>
+
+                <article>
+                    <h4>Pour le Perdant : Dégâts subis</h4>
+                    <p>
+                        Il perd des PV selon la puissance du vainqueur, réduite par sa propre résistance (Minimum 1 PV).
+                    </p>
+                    <p>
+                        <code>Dégâts = (Puissance<sub>Vainqueur</sub> × 10) / Resistance<sub>Perdant</sub></code>
+                    </p>
+                </article>
+
+                <article>
+                    <h4>Pour le Vainqueur : Gain d'expérience</h4>
+                    <ul>
+                        <li><strong>Gain d'XP :</strong> La Puissance augmente (+1).</li>
+                        <li><strong>Bonus Outsider :</strong> Si le vainqueur avait une probabilité < 40%, il gagne plus d'XP (+2 ou +3) car le combat était héroïque.</li>
+                        <li><strong>Coût :</strong> Il perd une petite quantité d'énergie (fatigue du combat).</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p><a href="#top">Haut de page</a></p>
+            <div>2026 - L2 Informatique - Groupe B - Cadre : UE Développement Web et Génie Logiciel et Projet - RABENANDRASANA Hajatiana, ANDRIAMANANTENASOA Aina et RATSIMBASON Fanantenana - CY Paris Université</div>
+        </footer>
+    </body>
+</html>
