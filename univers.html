@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <meta name="description" content="Site de présentation du projet BETES : simulation d'un écosystème multi-agents en Java" >
     <meta name="author" content="RABENANDRASANA Hajatiana - ANDRIAMANANTENASOA Aina -RATSIMBASON Fanantenana">
@@ -10,20 +12,34 @@
 
 <body>
 <header>
-    <img src="img/logo.png" alt = "logo université">
-    <h1>Simulation d"écosystème Bêtes</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="univers.html">Univers</a></li>
-            <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
-            <li><a href="combat.html">Système de combat</a></li>
-            <li><a href="architecture.html">Architecture GL</a></li>
-            <li><a href="equipe.html">Equipe</a></li>
-        </ul>
-    </nav>
+    <div class = "navbar">
+        <figure>
+            <img src="img/logo.png" alt = "logo université">
+        </figure>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="univers.html">Univers</a></li>
+                <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
+                <li><a href="combat.html">Système de combat</a></li>
+                <li><a href="architecture.html">Architecture GL</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Univers de la simulation</h1>
 </header>
 <main>
+    <h2>Sommaire:</h2>
+    <nav>
+        <ul>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#monde">Monde et règles</a></li>
+            <li><a href="#caracteristiques">Caractéristiques des bêtes</a></li>
+            <li><a href="#biomes">Biomes et météo</a></li>
+            <li><a href="#pointsforts">Points forts</a></li>
+        </ul>
+    </nav>
     <section>
         <h2>Description : </h2>
         <p>Dans le projet <strong>BETES</strong>, chaque bête agit de manière indépnedante au sein d'un écosystème simulé.</p>
@@ -50,15 +66,14 @@
     <section>
         <h2>Les caractéristiques des bêtes</h2>
         <p>Les bêtes sont des <em>agents</em> qui évoluent dans un environnement, qui agissent seuls et elles sont définient par un état biologique propre (comme l'âge, les points de vie, le sexe, le niveau de faim).</p>
-        <ul>
-            <table border="1">
+            <table>
                 <tr>
                     <th>Espèce</th>
                     <th>Caractéristiques</th>
                 </tr>
 
                 <tr>
-                    <td><img src="img/fourmi.png" alt ="représentation de fourmi"></td>
+                    <td><img src="img/fourmi.png" id="fourmi" alt ="représentation de fourmi"></td>
                     <td>
                         Très rapide (surtout forêt)<br>
                         Récolte beaucoup<br>
@@ -68,7 +83,7 @@
                 </tr>
 
                 <tr>
-                    <td><img src="img/coccinelle.png" alt ="représentation de coccinelle"></td>
+                    <td><img src="img/coccinelle.png" id="coccinelle" alt ="représentation de coccinelle"></td>
                     <td>
                         Équilibrée partout<br>
                         Bonne défense<br>
@@ -77,7 +92,7 @@
                 </tr>
 
                 <tr>
-                    <td><img src="img/scorpion.png" alt ="représentation de scorpion"></td>
+                    <td><img src="img/scorpion.png" id="scorpion" alt ="représentation de scorpion"></td>
                     <td>
                         Très fort en combat<br>
                         Très résistant (désert)<br>
@@ -86,7 +101,6 @@
                     </td>
                 </tr>
             </table>
-        </ul>
     </section>
 
     <section>
@@ -136,6 +150,12 @@
             <li>Agents autonomes avec décisions dépendantes</li>
         </ul>
     </section>
+    <aside id="footer">
+        <p>Pour la conception de notre moteur, nous nous sommes appuyés sur les ressources fournies sur la page officielle du cours de Génie Logicielde M. LIU.</p>
+        <p>Voici le lien du cours de Génie Logiciel: <a href="https://depinfo.u-cergy.fr/~tliu/glp.php">https://depinfo.u-cergy.fr/~tliu/glp.php</a></p>
+        <p>Le projet est à programmé en Java et doit suivre les principes POO du cours Programmation Orientée Objet - JAVA de M.LEMAIRE. Cela nécessite une connexion sur <em>Moodle</em>.</p>
+        <p>Voici le lien du cours de POO - Java: <a href="https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf">https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf</a></p>
+    </aside>
 </main>
 <footer>
     <p><a href="#top">Haut de page</a></p>

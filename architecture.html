@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <link rel="icon" type="image/x-icon" href="img/favicon.png">
         <link rel="stylesheet" type="text/css" href="styles.css">
         <meta charset="UTF-8">
         <meta name="description" content="Architecture logicielle du projet Bêtes : Patron MVC et séparation Moteur/IHM. UE Génie Logiciel." >
@@ -10,24 +10,27 @@
     </head>
     <body>
         <header>
-            <img src="img/logo.png" alt = "logo université">
+            <div class = "navbar">
+                <figure>
+                    <img src="img/logo.png" alt = "logo université">
+                </figure>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="univers.html">Univers</a></li>
+                        <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
+                        <li><a href="combat.html">Système de combat</a></li>
+                        <li><a href="architecture.html">Architecture GL</a></li>
+                        <li><a href="equipe.html">Equipe</a></li>
+                    </ul>
+                </nav>
+            </div>
             <h1>Architecture Logicielle</h1>
-            <p>Module <em>Génie Logiciel</em> et <em>Développement Web</em> - L2 Informatique</p>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="univers.html">Univers</a></li>
-                    <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
-                    <li><a href="combat.html">Système de combat</a></li>
-                    <li><a href="architecture.html">Architecture GL</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                </ul>
-            </nav>
         </header>
         <hr>
         <main>
             <aside>
-                <h2>Sommaire Architecture:</h2>
+                <h2>Sommaire :</h2>
                 <nav>
                     <ul>
                         <li><a href="#concept">Concept du module Génie Logiciel</a></li>
@@ -51,7 +54,7 @@
                 <h3>Le Patron Modèle-Vue-Contrôleur (MVC)</h3>
                 <p>Nous avons adapté l'architecture des programmes exemples du professeur pour notre simulation.</p>
                 <figure>
-                    <img class="images" src="img/archi_mvc.png" alt="Schéma de l'architecture MVC">
+                    <img class="images" id="archi_mvc" src="img/archi_mvc.png" alt="Schéma de l'architecture MVC">
                     <figcaption>Figure : Architecture MVC</figcaption>
                 </figure>
             </section>
@@ -92,6 +95,12 @@
                 <code>2. Moteur : Résoudre les interactions (Combats, Reproduction).</code><br>
                 <code>3. IHM : repaint() -> Rafraîchir l'affichage.</code>
             </section>
+            <aside id="footer">
+                <p>Pour la conception de notre moteur, nous nous sommes appuyés sur les ressources fournies sur la page officielle du cours de Génie Logicielde M. LIU.</p>
+                <p>Voici le lien du cours de Génie Logiciel: <a href="https://depinfo.u-cergy.fr/~tliu/glp.php">https://depinfo.u-cergy.fr/~tliu/glp.php</a></p>
+                <p>Le projet est à programmé en Java et doit suivre les principes POO du cours Programmation Orientée Objet - JAVA de M.LEMAIRE. Cela nécessite une connexion sur <em>Moodle</em>.</p>
+                <p>Voici le lien du cours de POO - Java: <a href="https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf">https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf</a></p>
+            </aside>
         </main>
         <hr>
         <footer>

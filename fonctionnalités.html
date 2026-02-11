@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <meta name="description" content="Site de présentation du projet BETES : simulation d'un écosystème multi-agents en Java" >
     <meta name="author" content="RABENANDRASANA Hajatiana - ANDRIAMANANTENASOA Aina -RATSIMBASON Fanantenana">
@@ -9,22 +11,35 @@
 </head>
 <body>
 <header>
-    <img src="img/logo.png" alt = "logo université">
-    <h1>Simulation d"écosystème Bêtes</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="univers.html">Univers</a></li>
-            <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
-            <li><a href="combat.html">Système de combat</a></li>
-            <li><a href="architecture.html">Architecture GL</a></li>
-            <li><a href="equipe.html">Equipe</a></li>
-        </ul>
-    </nav>
+  <div class = "navbar">
+    <figure>
+        <img src="img/logo.png" alt = "logo université">
+    </figure>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="univers.html">Univers</a></li>
+                <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
+                <li><a href="combat.html">Système de combat</a></li>
+                <li><a href="architecture.html">Architecture GL</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Fonctionnalité de la simulation</h1>
 </header>
 <main>
-
-    <section>
+    <h2>Sommaire:</h2>
+    <nav>
+    <ul>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#controle">Lancement et contrôle</a></li>
+        <li><a href="#visualisation">Visualisation</a></li>
+        <li><a href="#suivi">Suivi des bêtes</a></li>
+        <li><a href="#stats">Statistiques globales</a></li>
+    </ul>
+</nav>
+    <section id ="configuration">
         <h2>Configuration de la simulation</h2>
         <p>Avant de lancer la simulation, l’utilisateur peut définir les paramètres suivant pour personnaliser son expérience :</p>
         <ul>
@@ -35,7 +50,7 @@
         </ul>
         <figure>
 
-            <img src="img/grille.png" alt ="représentation du rendu graphique après configuration">
+            <img src="img/grille.png" id ="grille" alt ="représentation du rendu graphique après configuration">
             <figcaption><em>Illustration : Exemple de représentation graphique après la configuration</em> </figcaption>
         </figure>
     </section>
@@ -58,7 +73,7 @@
         </ul>
         <figure>
 
-            <img src="img/imageGraphique.png" alt ="représentation du rendu graphique">
+            <img src="img/imageGraphique.png" id ="imageGraphique" alt ="représentation du rendu graphique">
             <figcaption><em>Illustration : Exemple de représentation graphique</em> </figcaption>
         </figure>
     </section>
@@ -72,7 +87,7 @@
             <li>Observation de son état (faim, énergie, âge, etc.)</li>
         </ul>
         <figure>
-            <img src="img/StatistiquesBetes.png" alt ="Exemple de statistiques des bêtes">
+            <img src="img/StatistiquesBetes.png" id ="StatistiquesBetes" alt ="Exemple de statistiques des bêtes">
             <figcaption><em>Illustration : Exemple de statistiques des bêtes</em> </figcaption>
         </figure>
     </section>
@@ -87,6 +102,12 @@
             <li>Nombre de naissances et de morts</li>
         </ul>
     </section>
+    <aside id="footer">
+        <p>Pour la conception de notre moteur, nous nous sommes appuyés sur les ressources fournies sur la page officielle du cours de Génie Logicielde M. LIU.</p>
+        <p>Voici le lien du cours de Génie Logiciel: <a href="https://depinfo.u-cergy.fr/~tliu/glp.php">https://depinfo.u-cergy.fr/~tliu/glp.php</a></p>
+        <p>Le projet est à programmé en Java et doit suivre les principes POO du cours Programmation Orientée Objet - JAVA de M.LEMAIRE. Cela nécessite une connexion sur <em>Moodle</em>.</p>
+        <p>Voici le lien du cours de POO - Java: <a href="https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf">https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf</a></p>
+    </aside>
 </main>
 <footer>
     <p><a href="#top">Haut de page</a></p>

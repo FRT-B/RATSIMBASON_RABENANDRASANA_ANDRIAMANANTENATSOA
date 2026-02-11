@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <meta charset="UTF-8">
   <meta name="description" content="Site de présentation du projet BETES : simulation d'un écosystème multi-agents en Java" >
   <meta name="author" content="RABENANDRASANA Hajatiana - ANDRIAMANANTENASOA Aina -RATSIMBASON Fanantenana">
@@ -10,27 +12,42 @@
 
 <body>
 <header>
-  <img src="img/logo.png" alt = "logo université">
-<h1>Annonces du projet BETES </h1>
-  <nav>
-    <ul>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="univers.html">Univers</a></li>
-        <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
-        <li><a href="combat.html">Système de combat</a></li>
-        <li><a href="architecture.html">Architecture GL</a></li>
-        <li><a href="equipe.html">Equipe</a></li>
-      </ul>
-    </ul>
-  </nav>
+  <div class = "navbar">
+    <figure>
+      <img src="img/logo.png" alt = "logo université">
+    </figure>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="univers.html">Univers</a></li>
+          <li><a href="fonctionnalités.html">Fonctionnalités</a></li>
+          <li><a href="combat.html">Système de combat</a></li>
+          <li><a href="architecture.html">Architecture GL</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+        </ul>
+    </nav>
+  </div>
+  <h1>Annonces du projet BETES </h1>
   <figure>
     <img src="img/plansite.png">
     <figcaption>Plan du site web : Projet Bêtes</figcaption>
   </figure>
 </header>
 <main>
-  <section>
+  <aside>
+    <nav>
+    <ul>
+      <li><a href="#presentation">Présentation</a></li>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#pourquoi">Pourquoi ce projet ?</a></li>
+      <li><a href="#objectif">Objectif principal</a></li>
+      <li><a href="#utilisation">Utilisation prévue</a></li>
+      <li><a href="#infos">Informations</a></li>
+    </ul>
+  </nav>
+  </aside>
+  
+  <section id="presentation">
     <h2>Présentation du mini-site</h2>
     <p>Ce site présente le projet <strong>BETES</strong>, une simulation d'écosystème multi-agents développée en Java dans le cadre de l'UE GLP.</p>
     <p>
@@ -43,7 +60,7 @@
       complète de son fonctionnement.
     </p>
   </section>
-  <section>
+  <section id="description">
     <h2>Description du projet : </h2>
     <p><em>Simulation d'un écosystème multi-agents en Java</em></p>
     <p>Le projet <strong>BETES</strong> est une simulation d’écosystème multi-agents développée en <strong>Java</strong>
@@ -53,11 +70,11 @@
       L’objectif est d’observer l’évolution des populations et les interactions entre les agents au fil du temps.
     </p>
     </section>
-    <section>
+    <section id="pourquoi">
       <h2>Pourquoi ce projet ?</h2>
       <p>Ce projet permet de mettre en pratique la programmation orientée objet, la conception logicielle, ainsi que la modélisation de comportements autonomes dans un environnement dynamique. Bien qu’il ne représente pas parfaitement la réalité, il permet néanmoins d’en visualiser certains aspects.</p>
     </section>
-    <section>
+    <section id="objectif">
       <h2>Objectif principal </h2>
       <p>
         Le but du projet <strong>BETES</strong> est de créer une simulation d'un mon vivant où des agents autonomes, appelés <em>bêtes</em>, évoluent de manière indépendante dans une <strong>grille NxN.</strong>
@@ -70,7 +87,7 @@
         <li>Affichage graphique</li>
       </ul>
     </section>
-    <section>
+    <section id="utilisation">
       <h2>Utilisation prévue </h2>
       <p>Le logiciel est destiné à des <strong>observateurs</strong> souhaitant analyser l’évolution des populations de bêtes.</p>
       <p>L’utilisateur peut :</p>
@@ -81,7 +98,7 @@
       </ul>
       <p>Le projet permet de suivre les décisions des bêtes et d’évaluer l’impact des paramètres sur <strong>leur comportement et leur survie.</strong></p>
     </section>
-  <aside>
+  <aside id="infos">
     <h2>Informations</h2>
     <ul>
       <li><strong>UE:</strong> Génie logiciel et Projet (GLP)</li>
@@ -90,9 +107,16 @@
       <li><strong>Année:</strong> 2025-2026</li>
     </ul>
   </aside>
+  <aside id="footer">
+    <p>Pour la conception de notre moteur, nous nous sommes appuyés sur les ressources fournies sur la page officielle du cours de Génie Logicielde M. LIU.</p>
+    <p>Voici le lien du cours de Génie Logiciel: <a href="https://depinfo.u-cergy.fr/~tliu/glp.php">https://depinfo.u-cergy.fr/~tliu/glp.php</a></p>
+    <p>Le projet est à programmé en Java et doit suivre les principes POO du cours Programmation Orientée Objet - JAVA de M.LEMAIRE. Cela nécessite une connexion sur <em>Moodle</em>.</p>
+    <p>Voici le lien du cours de POO - Java: <a href="https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf">https://cours.cyu.fr/pluginfile.php/33487/mod_resource/content/1/poly_java.pdf</a></p>
+  </aside>
 </main>
 <footer>
-  <div>2026 - L2 Informatique - Grp B - TD Déveleppement Web - ANDRIAMANANTENASOA & RABENANDRASANA & RATSIMBASON - Marc LEMAIRE CY Paris Université</div>
+  <p><a href="#top">Haut de page</a></p>
+  <div>2026 - L2 Informatique - Groupe B - Cadre : UE Développement Web et Génie Logiciel et Projet - RABENANDRASANA Hajatiana, ANDRIAMANANTENASOA Aina et RATSIMBASON Fanantenana - CY Paris Université</div>
 </footer>
 </body>
 </html>
