@@ -62,17 +62,14 @@
                 <p>C'est l'étape de transformation des scores en pourcentage de chance de gagner (logique "Betclic / Winamax").</p>
                 <p>La probabilité de victoire de la Bête A (<var>P<sub>A</sub></var>) face à la Bête B est :</p>
 
-                <p style="border: 1px solid black; padding: 10px; display: inline-block;">
-                    P<sub>A</sub> = S<sub>A</sub> / (S<sub>A</sub> + S<sub>B</sub>)
-                </p>
-
-                <p><strong>Application à l'exemple Loup vs Mouton :</strong></p>
+                <p>P<sub>A</sub> = S<sub>A</sub> / (S<sub>A</sub> + S<sub>B</sub>)</p>
+                <p><strong>Application à l'exemple Abeille vs Coccinelle :</strong></p>
                 <ul>
                     <li>Total des scores = 140 + 35 = <strong>175</strong></li>
-                    <li>Chance du Loup : 140 / 175 = <strong>0.80</strong> (80%)</li>
-                    <li>Chance du Mouton : 35 / 175 = <strong>0.20</strong> (20%)</li>
+                    <li>Chance du Abeille : 140 / 175 = <strong>0.80</strong> (80%)</li>
+                    <li>Chance du Coccinelle : 35 / 175 = <strong>0.20</strong> (20%)</li>
                 </ul>
-                <p><em>Analyse : Le Mouton est l'outsider (grosse cote). Il a peu de chances, mais ce n'est pas zéro.</em></p>
+                <p><em>Analyse : Le Coccinelle est l'outsider (grosse cote). Il a peu de chances, mais ce n'est pas zéro.</em></p>
             </section>
             <section id="phase3">
                 <h3>Phase 3 : Le Tirage Aléatoire et le "X-Factor"</h3>
@@ -83,8 +80,8 @@
 
                 <h4>Résolution standard</h4>
                 <ul>
-                    <li>Si <code>x < P_A</code> (0.80) → <strong>Le Loup gagne</strong> (Logique respectée).</li>
-                    <li>Si <code>x >= P_A</code> → <strong>Le Mouton gagne</strong> (SURPRISE ! Coup de sabot chanceux).</li>
+                    <li>Si <code>x < P_A</code> (0.80) → <strong>Le Abeille gagne</strong> (Logique respectée).</li>
+                    <li>Si <code>x >= P_A</code> → <strong>Le Coccinelle gagne</strong> (SURPRISE ! Coup de sabot chanceux).</li>
                 </ul>
 
                 <h4>Le mécanisme de Coup Critique</h4>
